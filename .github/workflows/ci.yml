@@ -59,6 +59,3 @@ jobs:
           DB_PASSWORD: ${{env.PG_PASSWORD}}
           DB_HOST: ${{env.PG_HOST}}
           DB_PORT: ${{env.PG_PORT}}
-
-
-
