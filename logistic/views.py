@@ -1,3 +1,5 @@
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
 from logistic.models import Product, Stock
@@ -18,3 +20,6 @@ class StockViewSet(ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['address', 'products']
 
+@api_view(['GET'])
+def sample_view(request):
+    return Response('Hello world!')
