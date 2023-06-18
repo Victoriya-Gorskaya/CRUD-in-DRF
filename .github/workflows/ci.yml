@@ -6,7 +6,7 @@ on:
 
 jobs:
   testing:
-    runs: ubuntu-latest
+    runs-on: ubuntu-latest
     env:
       SECRET: ${{ secrets.SECRET_KEY }}
       DEBUG: "0"
