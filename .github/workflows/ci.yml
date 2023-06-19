@@ -59,3 +59,18 @@ jobs:
           DB_PASSWORD: ${{env.PG_PASSWORD}}
           DB_HOST: ${{env.PG_HOST}}
           DB_PORT: ${{env.PG_PORT}}
+
+      - name: Деплой
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{secrets.SSH_HOST}}
+          username: ${{secrets.SSH_USER}}
+          password: ${{secrets.SSH_PASSWORD}}
+          port: 5000
+          script: |
+            cd /home/victory/CRUD-in-DRF
+            git pull origin ci
+            source env/bin/activate
+            python manage.py migrate
+            deactivate
+            sudo systemctl restart gunicorn
