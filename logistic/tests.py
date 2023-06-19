@@ -8,5 +8,3 @@ class SampleTestCase(TestCase):
         url = '/api/v1/test/'
         response = client.get(url)
         self.assertEqual(response.data, "Hello world!")
-
-
