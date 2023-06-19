@@ -1,7 +1,6 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
-
 from logistic.models import Product, Stock
 from logistic.serializers import ProductSerializer, StockSerializer
 from django_filters.rest_framework import DjangoFilterBackend
