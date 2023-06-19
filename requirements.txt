@@ -4,4 +4,6 @@ psycopg2-binary
 flake8
 #python -m flake8 logistic/
 python-dotenv
+django-filter
+
 
