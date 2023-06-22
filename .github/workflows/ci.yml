@@ -67,10 +67,4 @@ jobs:
           username: ${{secrets.SSH_USER}}
           password: ${{secrets.SSH_PASSWORD}}
           port: 5000
-          script: |
-            cd /home/victory/CRUD-in-DRF
-            git pull origin ci
-            source env/bin/activate
-            python manage.py migrate
-            deactivate
-            sudo systemctl restart gunicorn
+          script: expect /home/victory/CRUD-in-DRF/pull.exp
